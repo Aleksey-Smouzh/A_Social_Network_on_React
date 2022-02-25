@@ -2,10 +2,11 @@
 * {
   font-family: "Bellota Text", cursive;
   color: black;
+  background:#172755;
 }
 .container_app{
   max-width: 1200px;
-
+  border: 2px solid #FFFFFF;
   margin: 0 auto;
   display: grid;
   grid-template-areas:
