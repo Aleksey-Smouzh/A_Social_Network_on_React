@@ -1,8 +1,12 @@
 import React from 'react'
+import './Profile.css';
+
+
+
 
 function Profile() {
   return (
-    <div>Profile</div>
+    <div className='container_profile'>Profile</div>
   )
 }
 

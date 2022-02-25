@@ -1,0 +1,5 @@
+.container_footer{
+    grid-area: f;
+    background: red;
+    height: 70px;
+}

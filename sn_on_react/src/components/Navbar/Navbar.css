@@ -1,0 +1,6 @@
+.container_navbar{
+    grid-area: n;
+    background: yellow;
+    height: 630px;
+    min-width: 200px;
+}

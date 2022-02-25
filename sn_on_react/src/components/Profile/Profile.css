@@ -1,0 +1,5 @@
+.container_profile{
+    grid-area: c;
+    background: green;
+    width: 1000px;
+}
