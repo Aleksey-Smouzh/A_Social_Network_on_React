@@ -6,3 +6,13 @@
     min-width: 200px;
     
 }
+
+.navbar_ul{
+    background: #8794BA;
+}
+.navbar_list{
+    color:aliceblue;
+    list-style-type: none;
+    background: #8794BA;
+    font-size: 24px;
+}
