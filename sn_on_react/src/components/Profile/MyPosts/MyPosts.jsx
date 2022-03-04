@@ -11,8 +11,8 @@ function MyPosts() {
      <button>Add post</button>
       <button>Remove</button> 
      </div>
-     <Post/>
-    
+     <Post message = "Hi, are you "/>
+     <Post message = 'it is my first post'/>
     
     </div>
   )
