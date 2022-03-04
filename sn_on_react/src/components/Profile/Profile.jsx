@@ -14,7 +14,12 @@ function Profile() {
           <h2 className="description_name_nickname">Name</h2>
           
       </div>
-     
+     <div>my posts</div>
+     <div>New post</div>
+     <div>post 1</div>
+     <div>post 2</div>
+
+
     </div>
   )
 }
