@@ -1,6 +1,6 @@
 import React from 'react';
 import post from './Post.module.css';
-import avatarPost from '../components/Image/avapost.jpeg'
+import img from '../Avatar/avapost.jpeg'
 
 
 
@@ -13,8 +13,8 @@ function Post(props) {
         
         Post1
     {props.message}
+    <dir><img className={post.avatar} src={img} alt="" /></dir>
     
-    <img src={avatarPost} alt="avapost" />
     </div>
   )
 }
