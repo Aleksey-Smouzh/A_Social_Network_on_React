@@ -1,19 +1,19 @@
 import React from 'react'
-import './Navbar.css';
+import navbar from './Navbar.module.css';
 
 
 
 function Navbar() {
   return (
-    <div className='container_navbar'>
+    <div className={navbar.container}>
 
-          <nav className='navbar_nav'>
-              <ul className='navbar_ul'>
-                  <li className='navbar_list'> <a href="/s">Your profile</a></li>
-                  <li className='navbar_list'>  <a href="/s">Messages</a></li>
-                  <li className='navbar_list'>  <a href="/s">News</a></li>
-                  <li className='navbar_list'>  <a href="/s">Music</a></li>
-                  <li className='navbar_list'>  <a href="/s">Settings</a></li>
+          <nav className={navbar.nav}>
+              <ul className={navbar.ul}>
+                  <li className={navbar.list}> <a href="/s">Your profile</a></li>
+                  <li className={navbar.list}>  <a href="/s">Messages</a></li>
+                  <li className={navbar.list}>  <a href="/s">News</a></li>
+                  <li className={navbar.list}>  <a href="/s">Music</a></li>
+                  <li className={navbar.list}>  <a href="/s">Settings</a></li>
               </ul>
           </nav>
 

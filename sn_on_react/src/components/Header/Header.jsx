@@ -1,14 +1,14 @@
 import React from 'react'
-import './Header.css';
+import header from './Header.module.css';
 import logo from '../Image/logo.svg';
 
 function Header() {
   return (
-    <div className='container_header'>header
+    <div className={header.container}>header
     
-    <img className='header_logo' src={logo} alt="cherry" />
+    <img className={header.logo} src={logo} alt="cherry" />
     
-    <h1 className="header_title">Pomme d`amour</h1>
+    <h1 className={header.title}>Pomme d`amour</h1>
     
     
     

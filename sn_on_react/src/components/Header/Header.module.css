@@ -1,4 +1,4 @@
-.container_header {
+.container {
   grid-area: h;
   /* background: #0088F0; */
   /* mix-blend-mode: multiply;  */
@@ -8,13 +8,13 @@
   display: flex;
 }
 
-.header_logo {
+.logo {
   width: 80px;
   height: 80px;
   padding-top: 60px;
 }
 
-.header_title {
+.title {
   font-size: 70px;
   color: #ffffff;
   text-align: center;

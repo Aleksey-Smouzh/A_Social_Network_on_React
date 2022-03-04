@@ -1,4 +1,4 @@
-.container_navbar{
+.container{
     grid-area: n;
     /* background: #0088F0; */
     background: #8794BA;
@@ -7,10 +7,10 @@
     
 }
 
-.navbar_ul{
+.ul{
     background: #8794BA;
 }
-.navbar_list, a{
+.list, a{
     color:aliceblue;
     list-style-type: none;
     background: #8794BA;

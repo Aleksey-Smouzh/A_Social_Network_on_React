@@ -1,17 +1,17 @@
 import React from 'react'
-import './Profile.css';
+import profile from'./Profile.module.css';
 import avatar from '../Image/avatar.jpeg';
 
 
 
 function Profile() {
   return (
-    <div className='container_profile'>Profile
+    <div className={profile.container}>Profile
     
-    <img className='profile_avatar' src={avatar} alt="avatar" />
+    <img className={profile.avatar} src={avatar} alt="avatar" />
       
-      <div className='profile_description'>
-          <h2 className="description_name_nickname">Name</h2>
+      <div className={profile.description}>
+          <h2 className={profile.description_name_nickname}>Name</h2>
           
       </div>
      <div>my posts</div>
