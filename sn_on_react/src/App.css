@@ -9,6 +9,7 @@
   border: 2px solid #FFFFFF;
   margin: 0 auto;
   display: grid;
+  grid-gap: 1px;
   grid-template-areas:
    "h h h" 
    "n c c" 

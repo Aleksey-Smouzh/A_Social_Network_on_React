@@ -10,7 +10,7 @@
 .navbar_ul{
     background: #8794BA;
 }
-.navbar_list{
+.navbar_list, a{
     color:aliceblue;
     list-style-type: none;
     background: #8794BA;

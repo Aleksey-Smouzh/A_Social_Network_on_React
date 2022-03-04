@@ -18,5 +18,8 @@
   font-size: 70px;
   color: #ffffff;
   text-align: center;
-  padding-left: 70px;
+  /* padding-left: 70px; */
+  margin: 0 auto;
+  margin-top: 39px;
+
 }
