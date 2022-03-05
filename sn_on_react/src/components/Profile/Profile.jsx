@@ -13,7 +13,7 @@ function Profile() {
       
       <div className={profile.description}>
           <h2 className={profile.description_name_nickname}>Name</h2>
-          
+           
       </div>
      <MyPosts/>
 

@@ -10,7 +10,7 @@ function App() {
       
 <Header></Header>
 <Navbar/>
-<Profile/>
+{/* <Profile/> */}
 <Footer/>
     </div>
   );

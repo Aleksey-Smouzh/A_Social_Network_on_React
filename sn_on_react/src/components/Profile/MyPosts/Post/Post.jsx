@@ -10,11 +10,10 @@ function Post(props) {
 
   return (
     <div className={post.container}>
-        
+       <img className={post.avatar} src={img} alt="" /> 
         Post1
     {props.message}
-    <dir><img className={post.avatar} src={img} alt="" /></dir>
-    
+    <span className={post.likes}>likes</span>{props.likes}
     </div>
   )
 }
