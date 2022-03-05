@@ -9,11 +9,11 @@ function Navbar() {
 
           <nav className={navbar.nav}>
               <ul className={navbar.ul}>
-                  <li className={navbar.list}> <a href="/Profile">Your profile</a></li>
-                  <li className={navbar.list}>  <a href="/Dialogs">Messages</a></li>
-                  <li className={navbar.list}>  <a href="/s">News</a></li>
-                  <li className={navbar.list}>  <a href="/s">Music</a></li>
-                  <li className={navbar.list}>  <a href="/s">Settings</a></li>
+                  <li className={navbar.list}> <a href="/profile">Your profile</a></li>
+                  <li className={navbar.list}>  <a href="/dialogs">Messages</a></li>
+                  <li className={navbar.list}>  <a href="/news">News</a></li>
+                  <li className={navbar.list}>  <a href="/music">Music</a></li>
+                  <li className={navbar.list}>  <a href="/settings">Settings</a></li>
               </ul>
           </nav>
 

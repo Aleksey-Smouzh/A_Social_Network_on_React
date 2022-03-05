@@ -1,0 +1,5 @@
+.container{
+    grid-area: c; 
+    width: 1000px;
+    background-color:rgb(235, 142, 29)
+}
