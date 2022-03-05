@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Footer from './components/Footer/Footer';
+import Dialogs from './components/Dialogs/Dialogs';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
 <Header></Header>
 <Navbar/>
 {/* <Profile/> */}
+<Dialogs/>
 <Footer/>
     </div>
   );

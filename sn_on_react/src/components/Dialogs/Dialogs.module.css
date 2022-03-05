@@ -1,0 +1,4 @@
+.container{
+    grid-area: c; 
+    width: 1000px;
+}
