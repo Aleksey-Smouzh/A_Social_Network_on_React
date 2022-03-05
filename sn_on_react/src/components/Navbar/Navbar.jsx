@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import navbar from './Navbar.module.css';
 
 
@@ -9,11 +10,11 @@ function Navbar() {
 
           <nav className={navbar.nav}>
               <ul className={navbar.ul}>
-                  <li className={navbar.list}> <a href="/profile">Your profile</a></li>
-                  <li className={navbar.list}>  <a href="/dialogs">Messages</a></li>
-                  <li className={navbar.list}>  <a href="/news">News</a></li>
-                  <li className={navbar.list}>  <a href="/music">Music</a></li>
-                  <li className={navbar.list}>  <a href="/settings">Settings</a></li>
+                  <li className={navbar.list}> <NavLink to="/profile">Your profile</NavLink></li>
+                  <li className={navbar.list}>  <NavLink to="/dialogs">Messages</NavLink></li>
+                  <li className={navbar.list}>  <NavLink to="/news">News</NavLink></li>
+                  <li className={navbar.list}>  <NavLink to="/music">Music</NavLink></li>
+                  <li className={navbar.list}>  <NavLink to="/settings">Settings</NavLink></li>
               </ul>
           </nav>
 
