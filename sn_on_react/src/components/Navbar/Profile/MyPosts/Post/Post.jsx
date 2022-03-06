@@ -13,7 +13,8 @@ function Post(props) {
        <img className={post.avatar} src={img} alt="" /> 
         Post1
     {props.message}
-    <span className={post.likes}>likes</span>{props.likes}
+    <span className={post.likes}></span>
+    {props.likes}
     </div>
   )
 }
