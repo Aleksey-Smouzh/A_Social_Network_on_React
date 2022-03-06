@@ -8,12 +8,12 @@ function MyPosts(props) {
   let postData = [
     {id:1, message: "Have are you?", likes: "200"},
     {id:2, message: "Nothing, never mind", likes: "250"},
-    {id:3, message: "What's up?"},
-    {id:4, message: "Hello" },
-    {id:5, message: "Have are you?" },
-    {id:5, message: "Nothing, never mind" },
+    {id:3, message: "What's up?", likes: "300"},
+    {id:4, message: "Hello", likes: "90" },
+    {id:5, message: "Have are you?",  likes: "2"},
+    {id:5, message: "Nothing, never mind", likes: '1' },
   ]
-
+let postItem = postData.map(post => <Post message ={post.message} likes={post.likes}/>)
 
 
   return (
@@ -23,9 +23,7 @@ function MyPosts(props) {
      <button>Add post</button>
       <button>Remove</button> 
      </div>
-     <Post message ={postData[0].message} likes={postData[0].likes}/>
-     <Post message ={postData[1].message} likes={postData[1].likes} />
-     <Post message ={postData[2].message} likes={postData[2].likes} />
+          {postItem}
     </div>
   )
 }
