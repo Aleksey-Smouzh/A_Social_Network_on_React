@@ -16,6 +16,17 @@ return(
 
 
 function Profile(props) {
+
+let profileData = [
+{id:1, name: "Pupkin", age: "23", country: "Gonduras ",city: "Chupacabra"},
+{id:2, name: "Gonza", age: "34", country: "Gorza",city: "Chupxondric"},
+{id:3, name: "Krukva", age: "73", country: "Nikaragua ",city: "Minskas"},
+{id:4, name: "Pronya", age: "13", country: "Brazilia ",city: "Prazenbam"},
+{id:5, name: "Patrik", age: "63", country: "Yotube",city: "Culima"},
+]
+
+
+
   return (
     <div className={profile.container}>Profile
     
@@ -23,7 +34,7 @@ function Profile(props) {
       
       <div className={profile.description}>
           
-          <ProfileName name="Pupkin"/>
+          <ProfileName name={profileData[0].name} age={profileData[0].age}/>
       </div>
      <MyPosts/>
 
