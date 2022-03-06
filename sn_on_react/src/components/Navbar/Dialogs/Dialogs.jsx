@@ -3,6 +3,24 @@ import dialogs from './Dialogs.module.css'
 import { NavLink } from 'react-router-dom';
 
 
+const Dialogslists = (props) => {
+  let path = "/dialogs/" + props.id
+  return (
+    <div className={dialogs.list}>
+      <NavLink to={path}>{props.name}</NavLink>
+    </div>
+
+  )
+
+}
+
+const Messages = (props) => {
+  return (
+    <div className={dialogs.message}>{props.message}</div>
+
+
+  )
+}
 
 function Dialogs(props) {
   return (
@@ -10,41 +28,23 @@ function Dialogs(props) {
 
       <div className={dialogs.lists}>
 
-        <div className={dialogs.list}>
-          <NavLink to="/dialogs/1">Vasia 1</NavLink>
-        </div>
-
-        <div className={dialogs.list}>
-          <NavLink to="/dialogs/2">Vasia 2</NavLink>
-        </div>
-
-        <div className={dialogs.list}>
-          <NavLink to="/dialogs/3">Vasia 3</NavLink>
-        </div>
-
-        <div className={dialogs.list}>
-          <NavLink to="/dialogs/4">Vasia 4</NavLink>
-        </div>
-
-        <div className={dialogs.list}>
-          <NavLink to="/dialogs/5">Vasia 5</NavLink>
-        </div>
-
-        <div className={dialogs.list}>
-          <NavLink to="/dialogs/6">Vasia 6</NavLink>
-        </div>
-
+        <Dialogslists name="Vasia " id="1" />
+        <Dialogslists name="Peteya " id="2" />
+        <Dialogslists name="Kolya " id="3" />
+        <Dialogslists name="Marusay " id="4" />
+        <Dialogslists name="Dima " id="5" />
+        <Dialogslists name="Zorro " id="6" />
 
       </div>
 
       <div className={dialogs.text_messages}>
 
-        <div className={dialogs.message}>Hi how are Your 1</div>
-        <div className={dialogs.message}>Hi how are Your 2</div>
-        <div className={dialogs.message}>Hi how are Your 3</div>
-        <div className={dialogs.message}>Hi how are Your 4</div>
-        <div className={dialogs.message}>Hi how are Your 5</div>
-        <div className={dialogs.message}>Hi how are Your 6</div>
+        <Messages message="hi" />
+        <Messages message="Yo" />
+        <Messages message="What's up?" />
+        <Messages message="Hello" />
+        <Messages message="Have are you?" />
+        <Messages message="Nothing, never mind" />
 
       </div>
 
