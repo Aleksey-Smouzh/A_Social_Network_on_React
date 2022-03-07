@@ -1,19 +1,19 @@
-.container{
-    grid-area: n;
-    /* background: #0088F0; */
-    background: #8794BA;
-    height: 630px;
-    min-width: 200px;
-    
+.container {
+  grid-area: n;
+  /* background: #0088F0; */
+  background: #8794ba;
+  height: 630px;
+  min-width: 200px;
 }
 
-.ul{
-    background: #8794BA;
+.ul {
+  background: #8794ba;
 }
-.list, a{
-    color:aliceblue;
-    list-style-type: none;
-    background: #8794BA;
-    font-size: 24px;
-    text-decoration: none;
+.list,
+a {
+  color: aliceblue;
+  list-style-type: none;
+  background: #8794ba;
+  font-size: 24px;
+  text-decoration: none;
 }

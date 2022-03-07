@@ -5,16 +5,16 @@ import img from '../Avatar/avapost.jpeg'
 
 
 function Post(props) {
- 
+
 
 
   return (
     <div className={post.container}>
-       <img className={post.avatar} src={img} alt="" /> 
-        Post1
-    {props.message}
-    <span className={post.likes}></span>
-    {props.likes}
+      <img className={post.avatar} src={img} alt="" />
+      Post1
+      {props.message}
+      <span className={post.likes}></span>
+      {props.likes}
     </div>
   )
 }

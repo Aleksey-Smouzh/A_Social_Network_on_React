@@ -1,14 +1,12 @@
-.container{
-    grid-area: c;
-    background-image: url(../Image/wood.jpeg);
-    width: 1000px;
-    
+.container {
+  grid-area: c;
+  background-image: url(../Image/wood.jpeg);
+  width: 1000px;
 }
-.avatar{
-    border-radius: 50%;
-    margin-top: 30px;
+.avatar {
+  border-radius: 50%;
+  margin-top: 30px;
 }
-.description_name_nickname{
-    color: #ffffff;
-   
+.description_name_nickname {
+  color: #ffffff;
 }
