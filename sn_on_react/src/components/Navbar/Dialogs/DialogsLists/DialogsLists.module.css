@@ -1,0 +1,27 @@
+.container {
+    grid-area: c;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+  }
+  
+  .lists {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .list {
+    padding: 20px;
+    font-size: large;
+  }
+  
+  .text_messages {
+    padding: 20px;
+    border-left: 3px solid green;
+    height: 609px;
+  }
+  
+  .message {
+    padding: 10px;
+  }
+  
