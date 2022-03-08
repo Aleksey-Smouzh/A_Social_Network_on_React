@@ -5,21 +5,7 @@ import MyPosts from "./MyPosts/MyPosts";
 import ProfileDescription from "./MyPosts/ProfileDescription/ProfileDescription";
 
 function Profile(props) {
-  let profileData = [
-    {
-      id: 1,
-      name: "Pupkin",
-      age: "23",
-      country: "Gonduras ",
-      city: "Chupacabra",
-    },
-    // {id:2, name: "Gonza", age: "34", country: "Gorza",city: "Chupxondric"},
-    // {id:3, name: "Krukva", age: "73", country: "Nikaragua ",city: "Minskas"},
-    // {id:4, name: "Pronya", age: "13", country: "Brazilia ",city: "Prazenbam"},
-    // {id:5, name: "Patrik", age: "63", country: "Yotube",city: "Culima"},
-  ];
-
-  let profileItems = profileData.map((p) => (
+  let profileItems = props.profileData.map((p) => (
     <ProfileDescription
       name={p.name}
       age={p.age}
@@ -33,7 +19,7 @@ function Profile(props) {
       Profile
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div>
-      <MyPosts />
+      <MyPosts postData={props.postData} />
     </div>
   );
 }
