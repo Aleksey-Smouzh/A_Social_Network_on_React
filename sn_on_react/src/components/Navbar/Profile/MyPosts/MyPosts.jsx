@@ -7,13 +7,21 @@ function MyPosts(props) {
     <Post message={post.message} likes={post.likes} />
   ));
 
+let newPostElement = React.createRef();
+
+let addPost = () => {
+let text = newPostElement.current.value
+}
+
+
+
   return (
     <div className={myPost.container}>
       <div>my posts</div>
       <div>
-        <textarea name="" id="" cols="0" rows="0"></textarea>
-        <button>Add post</button>
-        <button>Remove</button>
+        <textarea name="" id="" cols="0" rows="0"  ref={newPostElement}    ></textarea>
+        <button onClick={addPost}>Add post</button>
+        <button onClick={addPost} >Remove</button>
       </div>
       {postItem}
     </div>
