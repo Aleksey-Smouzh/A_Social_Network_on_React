@@ -19,8 +19,18 @@
   padding: 20px;
   border-left: 3px solid green;
   height: 609px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "y"
+    "z";
 }
 
 .message {
   padding: 10px;
+}
+
+.addMessage {
+  align-items: end;
+  display: flex;
 }
