@@ -42,7 +42,19 @@ let state = {
         // {id:5, name: "Patrik", age: "63", country: "Yotube",city: "Culima"},
     ],
 
-
 }
+
+export let addPost = (postMessage) =>{
+    debugger;
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likes: "3038"
+    };
+    state.postData.push(newPost)  
+}
+
+
+
 
 export default state

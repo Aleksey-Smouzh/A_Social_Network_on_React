@@ -9,12 +9,11 @@ function MyPosts(props) {
 
 let newPostElement = React.createRef();
 
-let addPost = () => {
+let addPost = (props) => {
+  
 let text = newPostElement.current.value
+addPost(text)
 }
-
-
-
   return (
     <div className={myPost.container}>
       <div>my posts</div>
