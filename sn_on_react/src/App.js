@@ -20,8 +20,8 @@ function App(props) {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/profile" element={<Profile postData={props.state.postData} profileData={props.state.profileData} addPost={props.addPost}/>} />
-          <Route path="/dialogs" element={<Dialogs dialogsData={props.state.dialogsData} messageData={props.state.messageData} />} />
+          <Route path="/profile" element={<Profile state={props.state.profilePage} profileData={props.state.profileData} addPost={props.addPost}/>} />
+          <Route path="/dialogs" element={<Dialogs state={props.state.messagesPage} messageData={props.state.profilePage} />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
           <Route path="/settings" element={<Settings />} />

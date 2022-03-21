@@ -20,7 +20,7 @@ function Profile(props) {
       Profile
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div>
-      <MyPosts postData={props.postData} addPost={props.addPost}/>
+      <MyPosts postData={props.state.postData} addPost={props.addPost}/>
     </div>
   );
 }
