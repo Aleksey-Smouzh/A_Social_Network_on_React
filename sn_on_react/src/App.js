@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import News from "./components/Navbar/News/News";
 import Music from "./components/Navbar/Music/Music";
 import Settings from "./components/Navbar/Settings/Settings";
-import { addPost } from "./redux/State";
+
 
 
 
@@ -20,7 +20,7 @@ function App(props) {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/profile" element={<Profile postData={props.state.postData} profileData={props.state.profileData} addPost={props.state.addPost}/>} />
+          <Route path="/profile" element={<Profile postData={props.state.postData} profileData={props.state.profileData} addPost={props.addPost}/>} />
           <Route path="/dialogs" element={<Dialogs dialogsData={props.state.dialogsData} messageData={props.state.messageData} />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />

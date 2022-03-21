@@ -4,6 +4,7 @@ import avatar from "../Image/avatar.jpeg";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileDescription from "./MyPosts/ProfileDescription/ProfileDescription";
 
+
 function Profile(props) {
   let profileItems = props.profileData.map((p) => (
     <ProfileDescription
@@ -19,7 +20,7 @@ function Profile(props) {
       Profile
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div>
-      <MyPosts postData={props.postData} />
+      <MyPosts postData={props.postData} addPost={props.addPost}/>
     </div>
   );
 }
