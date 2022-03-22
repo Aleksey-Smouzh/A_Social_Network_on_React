@@ -3,21 +3,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import  state, { addPost, updateNewPost, addMessage, subscribe} from './redux/State'    //state,
+import  store  from './redux/State'    //state,
 
  let rerenderEntireTree = (state) => {
 ReactDOM.render(
   <React.StrictMode>
     <App 
-    state={state} addPost={addPost} updateNewPost={updateNewPost} addMessage={addMessage}
+    state={state} addPost={store.addPost.bind(store)}
+     updateNewPost={store.updateNewPost.bind(store)}
+      addMessage={store.addMessage.bind(store)}
     
     />
   </React.StrictMode>,
   document.getElementById("root")
 );
 }
-rerenderEntireTree(state)
-subscribe(rerenderEntireTree)
+rerenderEntireTree(store.getState())
+store.subscribe(rerenderEntireTree)
 
 
 
@@ -39,4 +41,4 @@ subscribe(rerenderEntireTree)
 //     />
 //   </React.StrictMode>,
 //   document.getElementById("root")
-// );
+// { addPost, updateNewPost, addMessage, subscribe});
