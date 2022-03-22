@@ -46,6 +46,17 @@ let state = {
   ],
 };
 
+export let addMessage = (newMessages) => {
+  let newMessage = {
+
+    message: newMessages
+  }
+state.messagesPage.messageData.push(newMessage)
+rerenderEntireTree(state)
+}
+
+
+
 export let addPost = (postMessage) => {
   let newPost = {
     id: 5,
