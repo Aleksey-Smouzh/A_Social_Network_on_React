@@ -20,7 +20,8 @@ function App(props) {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/profile" element={<Profile state={props.state.profilePage} profileData={props.state.profileData} addPost={props.addPost}/>} />
+          <Route path="/profile" element={<Profile state={props.state.profilePage} profileData={props.state.profileData} addPost={props.addPost} updateNewPost={props.updateNewPost}/>} />
+          
           <Route path="/dialogs" element={<Dialogs state={props.state.messagesPage} messageData={props.state.profilePage} />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
