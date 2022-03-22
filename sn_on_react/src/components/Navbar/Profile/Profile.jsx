@@ -20,10 +20,11 @@ function Profile(props) {
       Profile
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div>
-      <MyPosts postData={props.state.postData} addPost={props.addPost} newPostText={props.state.newPostText}  updateNewPost={props.updateNewPost}         />
+      <MyPosts postData={props.state.postData} dispatch={props.dispatch} newPostText={props.state.newPostText} />
     </div>
     
   );
 }
 
 export default Profile;
+//updateNewPost={props.updateNewPost}

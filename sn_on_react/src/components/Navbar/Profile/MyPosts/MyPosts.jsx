@@ -12,13 +12,13 @@ function MyPosts(props) {
   let addPost = () => {
   
     let text = newPostElement.current.value;
-    props.addPost(text);
+    props.dispatch({type: "ADD-POST", text: text});
     newPostElement.current.value = " ";
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPost(text);
+    props.dispatch({type: "UPDATE-NEW-POST", newText:  text });
   };
   return (
     <div className={myPost.container}>

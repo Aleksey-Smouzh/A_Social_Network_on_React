@@ -19,7 +19,7 @@ function App(props) {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/profile" element={<Profile state={props.state.profilePage} profileData={props.state.profileData} addPost={props.addPost} updateNewPost={props.updateNewPost} />} />
+          <Route path="/profile" element={<Profile state={props.state.profilePage} profileData={props.state.profileData} dispatch={props.dispatch} />} />
           <Route path="/dialogs" element={<Dialogs state={props.state.messagesPage} messageData={props.state.profilePage} addMessage={props.addMessage} />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
@@ -32,3 +32,4 @@ function App(props) {
 }
 
 export default App;
+//updateNewPost={props.updateNewPost}
