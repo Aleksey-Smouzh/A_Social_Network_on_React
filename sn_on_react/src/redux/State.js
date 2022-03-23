@@ -56,16 +56,6 @@ return this._state
     },
     
 
-    // addPost(postMessage) {
-        
-    //     let newPost = {
-    //         id: 5,
-    //         message: this._state.profilePage.newPostText,
-    //         likes: 0,
-    //     };
-    //     this._state.profilePage.postData.push(newPost);
-    //     this._callSubscriber(this._state)
-    // },
     addMessage(newMessages) {
         let newMessage = {
 
@@ -74,11 +64,7 @@ return this._state
         this._state.messagesPage.messageData.push(newMessage)
         this._callSubscriber(this._state)
     },
-    // updateNewPost(newText) {
-        
-    //     this._state.profilePage.newPostText = newText;
-    //     this._callSubscriber(this._state)
-    // },
+    
     dispatch(action){                //action это объект кторое должно иметь свойсва и тип -> {type: "ADD-POST"}
 if(action.type === 'ADD-POST'){
     let newPost = {
@@ -93,10 +79,20 @@ if(action.type === 'ADD-POST'){
     this._callSubscriber(this._state)
 
 }
-    }
-   
+    } 
 }
 
-window.store = store;
+export const addPostActionCreator = () => {
+    return {
+      type: "ADD-POST"
+    }
+  }
+  
+export const updateNewPostActionCreator = (text) => {
+    return {type: "UPDATE-NEW-POST", newText: text}
+  }
+
+
 
 export default store;
+window.store = store;
