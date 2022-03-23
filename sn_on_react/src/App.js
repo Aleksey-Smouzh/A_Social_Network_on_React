@@ -9,9 +9,6 @@ import News from "./components/Navbar/News/News";
 import Music from "./components/Navbar/Music/Music";
 import Settings from "./components/Navbar/Settings/Settings";
 
-
-
-
 function App(props) {
   return (
     <div className="container_app">
@@ -20,7 +17,7 @@ function App(props) {
         <Navbar />
         <Routes>
           <Route path="/profile" element={<Profile state={props.state.profilePage} profileData={props.state.profileData} dispatch={props.dispatch} />} />
-          <Route path="/dialogs" element={<Dialogs state={props.state.messagesPage} messageData={props.state.profilePage} addMessage={props.addMessage} />} />
+          <Route path="/dialogs" element={<Dialogs store={props.store} />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
           <Route path="/settings" element={<Settings />} />
@@ -32,4 +29,5 @@ function App(props) {
 }
 
 export default App;
-//updateNewPost={props.updateNewPost}
+
+
