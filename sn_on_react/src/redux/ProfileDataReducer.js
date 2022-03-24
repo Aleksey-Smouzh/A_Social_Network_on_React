@@ -3,3 +3,5 @@ const ProfileDataReducer = (state, action) => {
         state
     )
 }
+
+export default ProfileDataReducer
