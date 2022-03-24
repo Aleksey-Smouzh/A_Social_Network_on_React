@@ -1,7 +1,7 @@
 
-import ProfileReducer from "../redux/ProfileReducer"
-import MessageReducer from "../redux/MessageReducer"
-import ProfileDtaReducer from "../redux/ProfileDataReducer"
+import ProfileReducer from "./ProfileReducer"
+import MessageReducer from "./MessageReducer"
+import ProfileDtaReducer from "./ProfileDataReducer"
 
 let store = {
     _state: {
