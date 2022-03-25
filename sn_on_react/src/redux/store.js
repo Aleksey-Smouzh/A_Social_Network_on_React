@@ -1,7 +1,7 @@
 
 import ProfileReducer from "./ProfileReducer"
 import MessageReducer from "./MessageReducer"
-import ProfileDtaReducer from "./ProfileDataReducer"
+import ProfileDataReducer from "./ProfileDataReducer"
 
 let store = {
     _state: {
@@ -59,17 +59,21 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    addMessage(newMessages) {
-        let newMessage = {
-            message: newMessages,
-        };
-        this._state.messagesPage.messageData.push({ id: 7, message: newMessage });
-        this._callSubscriber(this._state);
-    },
+    
+    // addMessage(newMessages) {
+    //     let newMessage = {
+    //         message: newMessages,
+    //     };
+    //     this._state.messagesPage.messageData.push({ id: 7, message: newMessage });
+    //     this._callSubscriber(this._state);
+    // },
+
+
+
     dispatch(action) {
         this._state.profilePage = ProfileReducer(this._state.profilePage, action)
         this._state.messagesPage = MessageReducer(this._state.messagesPage, action)
-        this._state.profileData = ProfileDtaReducer(this._state.profileData, action)
+        this._state.profileData = ProfileDataReducer(this._state.profileData, action)
         this._callSubscriber(this._state);
 
 
