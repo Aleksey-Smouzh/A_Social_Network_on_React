@@ -16,6 +16,7 @@ function MyPosts(props) {
   let addPost = () => {
     let text = newPostElement.current.value;
     let action = addPostActionCreator(text);
+   
     props.dispatch(action);
     newPostElement.current.value = " ";
   };
