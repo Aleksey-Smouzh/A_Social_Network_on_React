@@ -14,17 +14,18 @@ function MyPosts(props) {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    let text = newPostElement.current.value;
-    let action = addPostActionCreator(text);
-   
-    props.dispatch(action);
-    newPostElement.current.value = " ";
+    props.addPost()
+    // let text = newPostElement.current.value;
+    //  let action = addPostActionCreator(text);
+    //  props.dispatch(action);
+    // newPostElement.current.value = " ";
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    let action = updateNewPostActionCreator(text);
-    props.dispatch(action);
+    props.updateNewPostActionCreator(text)
+    //  let action = updateNewPostActionCreator(text);
+    //  props.dispatch(action);
   };
   return (
     <div className={myPost.container}>

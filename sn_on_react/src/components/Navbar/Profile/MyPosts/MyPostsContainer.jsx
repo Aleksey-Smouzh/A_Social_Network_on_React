@@ -1,47 +1,34 @@
 import React from "react";
-import myPost from "./MyPosts.module.css";
-import Post from "./Post/Post";
+
+// import Post from "./Post/Post";
 import {
   addPostActionCreator,
   updateNewPostActionCreator,
 } from "../../../../redux/ProfileReducer";
+import MyPosts from "./MyPosts";
 
-function MyPosts(props) {
-  let postItem = props.postData.map((post) => (
-    <Post message={post.message} likes={post.likes} />
-  ));
-
-  let newPostElement = React.createRef();
+function MyPostsContainer(props) {
+  debugger
+  let state = props.store.getState();
 
   let addPost = () => {
-    //props.addPost()
-    let text = newPostElement.current.value;
-     let action = addPostActionCreator(text);
-     props.dispatch(action);
-    newPostElement.current.value = " ";
+    props.store.dispatch(addPostActionCreator());
+
   };
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-    //props.updateNewPostActionCreator(text)
-     let action = updateNewPostActionCreator(text);
-     props.dispatch(action);
+  let onPostChange = (text) => {
+    let action = updateNewPostActionCreator(text);   // оставлено для примера но можно написать как addPost
+    props.store.dispatch(action);
   };
-  return (
-    <div className={myPost.container}>
-      <div>my posts</div>
-      <div>
-        <textarea
-          onChange={onPostChange}
-          ref={newPostElement}
-          value={props.newPostText}
-        />
-        <button onClick={addPost}>Add post</button>
-        <button onClick={addPost}>Remove</button>
-      </div>
-      {postItem}
-    </div>
+  
+  return (<MyPosts updateNewPostActionCreator={onPostChange} 
+    addPost={addPost}
+     postItem={state.postData.postItem}
+      newPostText={state.newPostText.newPostText}
+       profileItems={state.profileData.profileItems}/>
+
   );
+  
 }
 
-export default MyPosts;
+export default MyPostsContainer;

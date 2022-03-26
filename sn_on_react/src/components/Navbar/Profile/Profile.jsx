@@ -1,8 +1,9 @@
 import React from "react";
 import profile from "./Profile.module.css";
 import avatar from "../Image/avatar.jpeg";
-import MyPosts from "./MyPosts/MyPosts";
+// import MyPosts from "./MyPosts/MyPosts";
 import ProfileDescription from "./MyPosts/ProfileDescription/ProfileDescription";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
 function Profile(props) {
@@ -20,7 +21,7 @@ function Profile(props) {
       Profile
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div>
-      <MyPosts postData={props.state.postData} dispatch={props.dispatch} newPostText={props.state.newPostText} />
+      <MyPostsContainer  store={props.store}/>
     </div>
     
   );
@@ -28,3 +29,4 @@ function Profile(props) {
 
 export default Profile;
 //updateNewPost={props.updateNewPost}
+//postData={props.state.postData} dispatch={props.dispatch} newPostText={props.state.newPostText}
