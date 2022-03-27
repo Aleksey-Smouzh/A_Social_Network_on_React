@@ -2,14 +2,15 @@ import React from "react";
 import dialogs from "./Dialogs.module.css";
 import Dialogslists from "./DialogsLists/DialogsLists";
 import Messages from "./MessageData/Messages";
-import {
-  updateNewMessageTextCreator,
-  sendMessageCreator,
-} from "../../../redux/MessageReducer";
+// import {
+//   updateNewMessageTextCreator,
+//   sendMessageCreator,
+// } from "../../../redux/MessageReducer";
 
 function Dialogs(props) {
-  let state = props.store.getState().messagesPage;
 
+  let state = props.messagesPage;
+  
   let dialogsItem = state.dialogsData.map((dialog) => (
     <Dialogslists name={dialog.name} id={dialog.id} />
   ));
@@ -23,14 +24,14 @@ function Dialogs(props) {
 
   let onNewMessageChange = (event) => {
     let newTexts = event.target.value;
-    props.store.dispatch(updateNewMessageTextCreator(newTexts));
+    props.updateNewMessageText(newTexts);
   };
 
   let addMessage = (event) => {
     let text = event.target.value;
-    props.store.dispatch(sendMessageCreator(text));
+    props.sendMessage(text);
   };
-
+  
   return (
     <div className={dialogs.container}>
       <div className={dialogs.lists}>{dialogsItem}</div>

@@ -7,7 +7,8 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
 function Profile(props) {
-  let profileItems = props.profileData.map((p) => (
+ 
+  let profileItems = props.store.profileData.map((p) => (
     <ProfileDescription
       name={p.name}
       age={p.age}
@@ -21,10 +22,12 @@ function Profile(props) {
       Profile
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div>
-      <MyPostsContainer  store={props.store}/>
+      <MyPostsContainer store={props.store} />
+     
     </div>
     
   );
+  
 }
 
 export default Profile;
