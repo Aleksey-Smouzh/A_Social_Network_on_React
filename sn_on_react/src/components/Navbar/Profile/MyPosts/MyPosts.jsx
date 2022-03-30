@@ -7,7 +7,7 @@ import Post from "./Post/Post";
 // } from "../../../../redux/ProfileReducer";
 
 function MyPosts(props) {
-  
+
   let postItem = props.postData.map((post) => (
     <Post message={post.message} likes={post.likes} />
   ));
@@ -21,7 +21,7 @@ function MyPosts(props) {
     //  let action = addPostActionCreator(text);
     //  props.dispatch(action);
     // newPostElement.current.value = " ";
-    
+
   };
 
   let onPostChange = () => {
@@ -29,7 +29,7 @@ function MyPosts(props) {
     props.updateNewPostActionCreator(text)
     //  let action = updateNewPostActionCreator(text);
     //  props.dispatch(action);
-    
+
   };
   return (
     <div className={myPost.container}>

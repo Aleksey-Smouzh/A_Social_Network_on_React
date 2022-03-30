@@ -7,10 +7,7 @@ import MyPosts from "./MyPosts";
 
 
 const MyPostsContainer = (props) => {
-   
-    /// nen kbjvbbbj
   
-  // console.log(state)
   let addPost = () => {
     props.store.dispatch(addPostActionCreator());
     
@@ -26,7 +23,7 @@ const MyPostsContainer = (props) => {
     addPost={addPost} postData={props.store.postData}
      postItem={props.store.postData.postItem}
       newPostText={props.store.newPostText}
-        // profileItems={props.store.profileItems}
+        //  profileItems={props.store.profileItems}
       />
 
   );

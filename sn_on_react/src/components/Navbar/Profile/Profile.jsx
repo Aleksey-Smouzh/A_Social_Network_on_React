@@ -1,13 +1,13 @@
 import React from "react";
 import profile from "./Profile.module.css";
 import avatar from "../Image/avatar.jpeg";
-// import MyPosts from "./MyPosts/MyPosts";
+//  import MyPosts from "./MyPosts/MyPosts";
 import ProfileDescription from "./MyPosts/ProfileDescription/ProfileDescription";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
 function Profile(props) {
- 
+
   let profileItems = props.store.profileData.map((p) => (
     <ProfileDescription
       name={p.name}
@@ -23,11 +23,11 @@ function Profile(props) {
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div>
       <MyPostsContainer store={props.store} />
-     
+
     </div>
-    
+
   );
-  
+
 }
 
 export default Profile;
