@@ -16,10 +16,10 @@ function App(props) {
       
         <Navbar />
         <Routes>
-          <Route path="/profile" element={<Profile store={props.state} />} />
+          <Route path="/profile" element={<Profile  />} /> 
           <Route
             path="/dialogs"
-            element={<DialogsContainer store={props.store} />}
+            element={<DialogsContainer  />}
           />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
@@ -34,3 +34,5 @@ function App(props) {
 export default App;
 
 //<Profile state={props.state.profilePage} profileData={props.state.profileData} dispatch={props.dispatch} store={props.store}
+//element={<Profile store={props.state} />}
+//element={<DialogsContainer store={props.store} />}
