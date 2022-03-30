@@ -8,27 +8,29 @@ import MyPosts from "./MyPosts";
 
 
 const MyPostsContainer = (props) => {
-  
-  let addPost = () => {
-    props.store.dispatch(addPostActionCreator());
-    
-  };
 
-  let onPostChange = (text) => {
-      // оставлено для примера но можно написать как addPost
-    props.store.dispatch(updateNewPostActionCreator(text));
-    
-  };
- 
-  return (<StoreContext.Consumer>  {
-    (store) => (
-      <MyPosts updateNewPostActionCreator={onPostChange}
-        addPost={addPost} postData={props.store.postData}
-        postItem={props.store.postData.postItem}
-        newPostText={props.store.newPostText}
+
+
+  return (<StoreContext.Consumer>  
+    {
+    (store) => {
+      let state = store.getState();
+      let addPost = () => {
+        store.dispatch(addPostActionCreator());
+      };
+
+      let onPostChange = (text) => {
+        store.dispatch(updateNewPostActionCreator(text));
+      };
+      return <MyPosts
+        updateNewPostActionCreator={onPostChange}
+        addPost={addPost}
+        postData={state.postData}
+        postItem={state.profilePage.postData.postItem}
+        newPostText={state.profilePage.newPostText}
       //  profileItems={props.store.profileItems}
       />
-    )}
+    }}
 
   </StoreContext.Consumer>
 
@@ -37,3 +39,6 @@ const MyPostsContainer = (props) => {
 }
 
 export default MyPostsContainer;
+// postData={props.store.postData}
+//       postItem={props.store.postData.postItem}
+//       newPostText={props.store.newPostText}
