@@ -6,34 +6,43 @@ import {
   updateNewMessageTextCreator,
   sendMessageCreator,
 } from "../../../redux/MessageReducer";
+import StoreContext from "../../../Store-Context";
 import Dialogs from "./Dialogs";
 
+function DialogsContainer() {
+  //   let dialogsItem = state.dialogsData.map((dialog) => (
+  //     <Dialogslists name={dialog.name} id={dialog.id} />
+  //   ));
 
-function DialogsContainer(props) {
-  let state = props.store.getState().messagesPage;
+  //   let messageItem = state.messageData.map((message) => (
+  //     <Messages message={message.message} />
+  //   ));
 
-//   let dialogsItem = state.dialogsData.map((dialog) => (
-//     <Dialogslists name={dialog.name} id={dialog.id} />
-//   ));
+  //   let newMessageText = state.newMessageText;
+  //   // let newMessageElement = React.createRef();
 
-//   let messageItem = state.messageData.map((message) => (
-//     <Messages message={message.message} />
-//   ));
+  return (
+    <StoreContext.Consumer>
+     
+      {(store) => {
+        let state = store.getState().messagesPage;
+        let onNewMessageChange = (newTexts) => {
+          store.dispatch(updateNewMessageTextCreator(newTexts));
+        };
 
-//   let newMessageText = state.newMessageText;
-//   // let newMessageElement = React.createRef();
+        let addMessage = () => {
+          store.dispatch(sendMessageCreator());
+        };
 
-  let onNewMessageChange = (newTexts) => {
-    props.store.dispatch(updateNewMessageTextCreator(newTexts));
-  };
-
-  let addMessage = () => {
-    props.store.dispatch(sendMessageCreator());
-  };
-
-  return ( <Dialogs updateNewMessageText={onNewMessageChange}
-     sendMessage={addMessage} messagesPage={state} />
-    
+        return (
+          <Dialogs
+            updateNewMessageText={onNewMessageChange}
+            sendMessage={addMessage}
+            messagesPage={state}
+          />
+        );
+      }}
+    </StoreContext.Consumer>
   );
 }
 
