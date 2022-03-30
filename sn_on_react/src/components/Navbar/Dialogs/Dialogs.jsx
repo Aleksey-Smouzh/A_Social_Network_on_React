@@ -8,7 +8,7 @@ import Messages from "./MessageData/Messages";
 // } from "../../../redux/MessageReducer";
 
 function Dialogs(props) {
-
+  
   let state = props.messagesPage;
   
   let dialogsItem = state.dialogsData.map((dialog) => (

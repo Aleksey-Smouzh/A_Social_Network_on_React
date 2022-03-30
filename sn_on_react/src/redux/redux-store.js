@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import {combineReducers} from "redux"
+import { combineReducers } from "redux"
 import ProfileReducer from './ProfileReducer'
 import MessageReducer from './MessageReducer'
 import ProfileDataReducer from './ProfileDataReducer'
@@ -13,10 +13,7 @@ let reducers = combineReducers({
 
 })
 
-
-
-
-let store = createStore(reducers, composeWithDevTools() );
+let store = createStore(reducers, composeWithDevTools());
 
 
 

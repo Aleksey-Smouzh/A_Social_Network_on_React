@@ -1,7 +1,7 @@
 import React from "react";
-import dialogs from "./Dialogs.module.css";
-import Dialogslists from "./DialogsLists/DialogsLists";
-import Messages from "./MessageData/Messages";
+// import dialogs from "./Dialogs.module.css";
+// import Dialogslists from "./DialogsLists/DialogsLists";
+// import Messages from "./MessageData/Messages";
 import {
   updateNewMessageTextCreator,
   sendMessageCreator,
