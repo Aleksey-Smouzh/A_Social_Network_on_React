@@ -3,6 +3,7 @@ import {
   addPostActionCreator,
   updateNewPostActionCreator,
 } from "../../../../redux/ProfileReducer";
+import StoreContext from "../../../../Store-Context";
 import MyPosts from "./MyPosts";
 
 
@@ -19,15 +20,20 @@ const MyPostsContainer = (props) => {
     
   };
  
-  return ( <MyPosts  updateNewPostActionCreator={onPostChange} 
-    addPost={addPost} postData={props.store.postData}
-     postItem={props.store.postData.postItem}
-      newPostText={props.store.newPostText}
-        //  profileItems={props.store.profileItems}
+  return (<StoreContext.Consumer>  {
+    (store) => (
+      <MyPosts updateNewPostActionCreator={onPostChange}
+        addPost={addPost} postData={props.store.postData}
+        postItem={props.store.postData.postItem}
+        newPostText={props.store.newPostText}
+      //  profileItems={props.store.profileItems}
       />
+    )}
+
+  </StoreContext.Consumer>
 
   );
-  
+
 }
 
 export default MyPostsContainer;
