@@ -22,7 +22,7 @@ function Profile(props) {
       Profile
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div>
-      <MyPostsContainer store={props.store} />
+      <MyPostsContainer />
 
     </div>
 
@@ -33,3 +33,4 @@ function Profile(props) {
 export default Profile;
 //updateNewPost={props.updateNewPost}
 //postData={props.state.postData} dispatch={props.dispatch} newPostText={props.state.newPostText}
+//<MyPostsContainer store={props.store} />
