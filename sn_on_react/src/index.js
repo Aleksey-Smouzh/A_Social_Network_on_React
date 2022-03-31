@@ -4,15 +4,16 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import store from './redux/redux-store'    //state,
-import StoreContext from "./Store-Context";
+
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
 let rerenderEntireTree = (state) => {
   
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-      <StoreContext.Provider value={store}>
+        <Provider store={store}>
       <App
         // state={state} 
         // dispatch={store.dispatch.bind(store)}  
@@ -20,7 +21,7 @@ let rerenderEntireTree = (state) => {
           //  addMessage={store.addMessage.bind(store)}
 
       />
-      </StoreContext.Provider>
+      </Provider>
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById("root")

@@ -13,10 +13,9 @@ function App(props) {
   return (
     <div className="container_app">
       <Header></Header>
-      
         <Navbar />
         <Routes>
-          <Route path="/profile" element={<Profile  />} /> 
+          <Route path="/profile" element={<Profile/>} /> 
           <Route
             path="/dialogs"
             element={<DialogsContainer  />}

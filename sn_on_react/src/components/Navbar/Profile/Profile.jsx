@@ -7,7 +7,7 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
 function Profile(props) {
-
+  
   let profileItems = props.store.profileData.map((p) => (
     <ProfileDescription
       name={p.name}
