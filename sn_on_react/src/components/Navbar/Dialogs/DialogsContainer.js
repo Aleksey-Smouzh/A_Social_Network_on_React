@@ -1,8 +1,5 @@
-import React from "react";
+// import React from "react";
 import { connect } from "react-redux";
-// import dialogs from "./Dialogs.module.css";
-// import Dialogslists from "./DialogsLists/DialogsLists";
-// import Messages from "./MessageData/Messages";
 import {
   updateNewMessageTextCreator,
   sendMessageCreator,
@@ -23,7 +20,7 @@ import Dialogs from "./Dialogs";
 
 //   return (
 //     <StoreContext.Consumer>
-     
+
 //       {(store) => {
 //         let state = store.getState().messagesPage;
 //         let onNewMessageChange = (newTexts) => {
@@ -45,18 +42,18 @@ import Dialogs from "./Dialogs";
 //     </StoreContext.Consumer>
 //   );
 // }
- let mapStateTpProps = (state) => {
-return{
-  messagesPage: state.messagesPage
+let mapStateTpProps = (state) => {
+  return {
+    messagesPage: state.messagesPage
+  }
 }
- }
 
- let mapDispatchToProps = (dispatch) =>{
-return{
-  updateNewMessageText: (newTexts) => {dispatch(updateNewMessageTextCreator(newTexts))},
-  sendMessage: () => { dispatch(sendMessageCreator())}
+let mapDispatchToProps = (dispatch) => {
+  return {
+    updateNewMessageText: (newTexts) => { dispatch(updateNewMessageTextCreator(newTexts)) },
+    sendMessage: () => { dispatch(sendMessageCreator()) }
+  }
 }
- }
 
 const DialogsContainer = connect(mapStateTpProps, mapDispatchToProps)(Dialogs)
 
