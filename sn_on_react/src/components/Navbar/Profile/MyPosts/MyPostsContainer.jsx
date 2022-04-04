@@ -1,4 +1,4 @@
-// import React from "react";
+ import React from "react";
 import {
   addPostActionCreator,
   updateNewPostActionCreator,
@@ -36,15 +36,9 @@ import { connect } from "react-redux";
 //   );
 
 // }
-const mapDispatchToProps = (state) => {
-  return {
-    postData: state.postData,
-    postItem: state.profilePage.postData.postItem,
-    newPostText: state.profilePage.newPostText,
-  };
-};
 
-const mapStateTpProps = (dispatch) => {
+
+const mapDispatchToProps = (dispatch) => {
   return {
     updateNewPostActionCreator: (text) => {
       let action = updateNewPostActionCreator(text);
@@ -55,6 +49,17 @@ const mapStateTpProps = (dispatch) => {
     },
   };
 };
+
+const mapStateTpProps  = (state) => {
+  return {
+    postData: state.postData,
+    postItem: state.profilePage.postData.postItem,
+    newPostText: state.profilePage.newPostText,
+  };
+};
+
+
+
 
 const MyPostsContainer = connect(mapDispatchToProps, mapStateTpProps)(MyPosts);
 
