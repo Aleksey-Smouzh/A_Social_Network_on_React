@@ -1,0 +1,6 @@
+.container {
+    background: rgb(241, 98, 37);
+    color:blue;
+    grid-area: c; 
+    width: 1000px;
+}
