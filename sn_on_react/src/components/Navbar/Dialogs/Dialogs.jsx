@@ -12,7 +12,7 @@ function Dialogs(props) {
   let state = props.messagesPage;
   
   let dialogsItem = state.dialogsData.map((dialog) => (
-    <Dialogslists name={dialog.name} key={dialog.id}  />
+    <Dialogslists name={dialog.name}   />
   ));
 
   let messageItem = state.messageData.map((message) => (
