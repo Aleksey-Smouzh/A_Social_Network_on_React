@@ -3,10 +3,10 @@ import users from "./Users.module.css"
 
 function Users(props) {
   return (
-    <div className={users.container}>Users
+    <div className={users.container}>Users 
     {props.users.map(users => <div key={users.id}> 
      <div>
-         <img></img>
+        <img src={users.fotoUser} alt="avatar"  />
      </div>
      <div> 
          <button>Follow</button>
@@ -18,18 +18,14 @@ function Users(props) {
          {users.status}
      </div>
      <div>
-         {users.location.city}
+     {users.location.country}
      </div>
      <div>
-         {users.location.country}
+         {users.location.city}
      </div>
     
     </div>)}
-    
-    
-    
-    
-    
+
     </div>
   )
 }
