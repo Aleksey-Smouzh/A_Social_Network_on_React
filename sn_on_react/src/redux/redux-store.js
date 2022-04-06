@@ -4,12 +4,14 @@ import ProfileReducer from './ProfileReducer'
 import MessageReducer from './MessageReducer'
 import ProfileDataReducer from './ProfileDataReducer'
 import { composeWithDevTools } from 'redux-devtools-extension';
+import UsersReducer from "./UsersReducer";
 
 let reducers = combineReducers({
 
     profilePage: ProfileReducer,
     messagesPage: MessageReducer,
     profileData: ProfileDataReducer,
+    usersPage: UsersReducer
 
 })
 

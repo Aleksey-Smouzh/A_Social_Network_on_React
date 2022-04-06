@@ -9,7 +9,7 @@ import News from "./components/Navbar/News/News";
 import Music from "./components/Navbar/Music/Music";
 import Settings from "./components/Navbar/Settings/Settings";
 import DialogsContainer from "./components/Navbar/Dialogs/DialogsContainer";
-import Users from "./components/Navbar/Users/Users";
+import UsersContainer from "./components/Navbar/Users/UsersContainer";
 function App(props) {
   return (
     <div className="container_app">
@@ -23,7 +23,7 @@ function App(props) {
           />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
-          <Route path="users" element={<Users />} />
+          <Route path="users" element={<UsersContainer />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       
