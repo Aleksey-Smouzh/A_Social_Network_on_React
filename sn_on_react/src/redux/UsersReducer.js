@@ -7,7 +7,7 @@ const SET_USERS = "SET_USERS";
 let initialState = {
   users: [
     {
-        id: 1, fotoUser: avatar, followed: false, fullName: " Tarapunka", status: "I am junior fn",
+        id: 1, fotoUser: avatar, followed: true, fullName: " Tarapunka", status: "I am junior fn",
         location: { city: "Minsk", country: "Belarus" }
     },
     {
@@ -19,7 +19,7 @@ let initialState = {
         location: { city: "Minsk", country: "Belarus" }
     },
     {
-        id: 4, fotoUser: avatar,  followed: false, fullName: "Petya", status: "I am junior fn",
+        id: 4, fotoUser: avatar,  followed: true, fullName: "Petya", status: "I am junior fn",
         location: { city: "Minsk", country: "Belarus" }
     },
     {
@@ -67,7 +67,7 @@ const UsersReducer = (state = initialState, action) => {
 export const followActionCreator = (userId) => {
   return {
     type: FOLLOW,
-    userId,
+    userId
   };
 };
 export const unFollowActionCreator = (userId) => {
