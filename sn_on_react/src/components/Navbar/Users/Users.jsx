@@ -1,5 +1,5 @@
 import React from 'react'
-import users from "./Users.module.css"
+import userss from "./Users.module.css"
  import avatar from "../Image/avatar.jpeg"
 import * as axios from "axios"
 function Users(props) {
@@ -12,10 +12,10 @@ function Users(props) {
    
  }
     return (
-        <div className={users.container}>Users
+        <div className={userss.container}>
             {props.users.map(users => <div key={users.id}>
                 <div>
-                    <img src={users.photos.small != null ? users.small: avatar} alt="avatar" />
+                    <img  src={users.photos.small != null ? users.small: avatar} alt="avatar" />
                 </div>
                 <div>
                        
