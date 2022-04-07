@@ -4,13 +4,14 @@ import { followActionCreator, unFollowActionCreator, setUsersActionCreator } fro
 import Users from "./Users"
 
 
-let mapStateToProps = (state) =>{
-    return {
+let mapStateToProps = (state) => {
+  
+return {
         users: state.usersPage.users
     }
 }
- 
-let mapDispatchToProps = (dispatch) =>{
+
+let mapDispatchToProps = (dispatch) => {
     return {
         follow: (userId) => {
             dispatch(followActionCreator(userId))
@@ -24,4 +25,4 @@ let mapDispatchToProps = (dispatch) =>{
     }
 }
 
-export default connect (mapStateToProps, mapDispatchToProps ) (Users)
+export default connect(mapStateToProps, mapDispatchToProps)(Users)
