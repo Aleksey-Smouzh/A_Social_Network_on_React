@@ -1,50 +1,58 @@
-// import React from 'react'
-// import userss from "./Users.module.css"
-//  import avatar from "../Image/avatar.jpeg"
-// import * as axios from "axios"
+import React, { Component } from "react";
+import * as axios from "axios";
+import avatar from "../Image/avatar.jpeg";
+import userss from "./Users.module.css";
 
-// function Users(props) {
-//     let getUsers = () => {
+export default class UsersC extends Component {
+  constructor(props) {
+    super(props);
+    axios
+      .get("https://social-network.samuraijs.com/api/1.0/users")
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+      });
+  }
 
-   
-//     if (props.users.length === 0){
+  getUsers = () => {};
 
-//   axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-//       props.setUsers(response.data.items)
-//   });
-   
-//  }
-// }
-//     return (
-//         <div className={userss.container}>
-//             <button onClick={getUsers}> Get UserS</button>
-//             {props.users.map(users => <div key={users.id}>
-//                 <div>
-//                     <img  src={users.photos.small != null ? users.small: avatar} alt="avatar" />
-//                 </div>
-//                 <div>
-                       
-//                     {users.followed ? <button onClick={() => {props.unfollow(users.id)}}>Следи</button> :
-//                      <button onClick={() => { props.follow(users.id)} }>Не следи</button>}
-                      
-//                 </div>
-//                 <div>
-//                     {users.name}
-//                 </div>
-//                 <div>
-//                     {users.status}
-//                 </div >
-//                 <div>
-//                     {"users.location.country"}
-//                 </div>
-//                 <div> 
-//                     {"users.location.city"}
-//                 </div>
-
-//             </div>)}
-
-//         </div>
-//     )
-// }
-
-// export default Users
+  render() {
+    return (
+      <div className={userss.container}>
+        {/* <button onClick={this.getUsers}>Get UserS</button> */}
+        {this.props.users.map((users) => (
+          <div key={users.id}>
+            <div>
+              <img
+                src={users.photos.small != null ? users.small : avatar}
+                alt="avatar"
+              />
+            </div>
+            <div>
+              {users.followed ? (
+                <button
+                  onClick={() => {
+                    this.props.unfollow(users.id);
+                  }}
+                >
+                  Следи
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    this.props.follow(users.id);
+                  }}
+                >
+                  Не следи
+                </button>
+              )}
+            </div>
+            <div>{users.name}</div>
+            <div>{users.status}</div>
+            <div>{"users.location.country"}</div>
+            <div>{"users.location.city"}</div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+}
