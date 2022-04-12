@@ -23,6 +23,9 @@ let mapStateToProps = (state) => {
             },
             setUsers: (users) => {
                 dispatch(setUsersActionCreator(users))
+            },
+            setCurrentPage: (pageNamber) => {
+                dispatch()
             }
         }
     }
