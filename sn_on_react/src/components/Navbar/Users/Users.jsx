@@ -1,22 +1,34 @@
+/* eslint-disable array-callback-return */
 import React, { Component } from "react";
 import * as axios from "axios";
 import avatar from "../Image/avatar.jpeg";
 import userss from "./Users.module.css";
 
 export default class UsersC extends Component {
- 
-componentDidMount(){
+  componentDidMount() {
     axios
-    .get("https://social-network.samuraijs.com/api/1.0/users")
-    .then((response) => {
-      this.props.setUsers(response.data.items);
-    });
-}
+      .get("https://social-network.samuraijs.com/api/1.0/users")
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+      });
+  }
   getUsers = () => {};
 
   render() {
+      let pageCount = this.props.totalUsersCount / this.props.pageSize;
+      let pages = [];
+      for(let i=0 ; i <pageCount; i++){
+          pages.push(i)
+      }
     return (
       <div className={userss.container}>
+        <div>
+            {pages.map(p => {
+                // eslint-disable-next-line no-undef
+               return <span className={this.props.currentPage === p && selectedPage}>{p}</span>
+            })}
+
+        </div>
         {/* <button onClick={this.getUsers}>Get UserS</button> */}
         {this.props.users.map((users) => (
           <div key={users.id}>
