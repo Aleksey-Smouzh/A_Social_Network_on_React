@@ -14,7 +14,18 @@ export default class UsersC extends Component {
         this.props.setUsers(response.data.items);
       });
   }
-  getUsers = () => {};
+//   getUsers = () => {};
+
+onPageChanged = (pageNumber) => {
+    this.props.setCurrentPage(pageNumber)
+    axios
+    .get(
+      `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
+    )
+    .then((response) => {
+      this.props.setUsers(response.data.items);
+    });
+}
 
   render() {
     let pageCount = this.props.totalUsersCount / this.props.pageSize;
@@ -30,9 +41,7 @@ export default class UsersC extends Component {
             return (
               <span
                 className={this.props.currentPage}
-                onClick={() => {
-                  this.props.setCurrentPage(p);
-                }}
+                onClick={(e) => { this.onPageChanged(p);}}
               >
                 {p}{" "}
               </span>
