@@ -7,17 +7,20 @@ import {
   setUsersActionCreator,
   setCurrentPageActionCreator,
   setUsersTotalCountActionCreator,
+  toggleIsFetchingCountActionCreator,
 } from "../../../redux/UsersReducer";
 import Users from "./Users";
-
+import spinier from "../Image/icons8.png"
 
 class UsersContainer extends React.Component {
     componentDidMount() {
+        this.props.toggleIsFetchingCountActionCreator(true)
       axios
         .get(
           `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
         )
         .then((response) => {
+          this.props.toggleIsFetchingCountActionCreator(false);
           this.props.setUsers(response.data.items);
           this.props.setTotalUsersCount(response.data.totalCount);
         });
@@ -26,17 +29,22 @@ class UsersContainer extends React.Component {
   
     onPageChanged = (pageNumber) => {
       this.props.setCurrentPage(pageNumber);
+      this.props.toggleIsFetchingCountActionCreator(true)
       axios
         .get(
           `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
         )
         .then((response) => {
+
           this.props.setUsers(response.data.items);
+          this.props.toggleIsFetchingCountActionCreator(false);
         });
     };
   
     render() {
-      return <>   <Users  totalUsersCount = {this.props.totalUsersCount} pageSize = {this.props.pageSize}
+      return <>  
+      {this.props.isFetching ? <img src={spinier} alt="spinier" /> : null}
+       <Users  totalUsersCount = {this.props.totalUsersCount} pageSize = {this.props.pageSize}
       currentPage={this.props.currentPage} 
       onPageChanged={this.onPageChanged}
       users={this.props.users}
@@ -71,6 +79,9 @@ let mapDispatchToProps = (dispatch) => {
     setTotalUsersCount: (totalCount) => {
       dispatch(setUsersTotalCountActionCreator(totalCount));
     },
+    toggleIsFetchingCountActionCreator: (isFetching) => {
+        dispatch(toggleIsFetchingCountActionCreator(isFetching))
+    }
   };
 };
 
