@@ -1,23 +1,25 @@
-import React from 'react'
+import React from "react";
+import avatar from "../Image/avatar.jpeg";
+import userss from "./Users.module.css";
 
-function Users(props) {
+let Users = (props) => {
+  let pageCount = props.totalUsersCount / props.pageSize;
+  let pages = [];
+  for (let i = 1; i <= pageCount; i++) {
+    pages.push(i);
+  }
+
   return (
     <div>
-let pageCount = this.props.totalUsersCount / this.props.pageSize;
-    let pages = [];
-    for (let i = 1; i <= pageCount; i++) {
-      pages.push(i);
-    }
-    return (
       <div className={userss.container}>
         <div>
           {pages.map((p) => {
             // eslint-disable-next-line no-undef
             return (
               <span
-                className={this.props.currentPage}
+                className={props.currentPage}
                 onClick={(e) => {
-                  this.onPageChanged(p);
+                  props.onPageChanged(p);
                 }}
               >
                 {p}{" "}
@@ -25,8 +27,8 @@ let pageCount = this.props.totalUsersCount / this.props.pageSize;
             );
           })}
         </div>
-        {/* <button onClick={this.getUsers}>Get UserS</button> */}
-        {this.props.users.map((users) => (
+
+        {props.users.map((users) => (
           <div key={users.id}>
             <div>
               <img
@@ -38,7 +40,7 @@ let pageCount = this.props.totalUsersCount / this.props.pageSize;
               {users.followed ? (
                 <button
                   onClick={() => {
-                    this.props.unfollow(users.id);
+                    props.unfollow(users.id);
                   }}
                 >
                   Следи
@@ -46,7 +48,7 @@ let pageCount = this.props.totalUsersCount / this.props.pageSize;
               ) : (
                 <button
                   onClick={() => {
-                    this.props.follow(users.id);
+                    props.follow(users.id);
                   }}
                 >
                   Не следи
@@ -60,20 +62,8 @@ let pageCount = this.props.totalUsersCount / this.props.pageSize;
           </div>
         ))}
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Users
+export default Users;
