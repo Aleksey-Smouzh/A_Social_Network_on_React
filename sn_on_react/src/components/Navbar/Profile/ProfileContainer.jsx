@@ -3,7 +3,7 @@ import Profile from './Profile'
 
 export default class ProfileContainer extends Component {
   render() {
-    return ( <Profile/>
+    return ( <Profile {...this.props} />
     
     )
   }
