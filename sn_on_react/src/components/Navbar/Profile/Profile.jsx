@@ -6,22 +6,24 @@ import ProfileDescription from "./MyPosts/ProfileDescription/ProfileDescription"
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
-function Profile(props) {
+const Profile = (props)  => {
   
-  let profileItems = props.store.profileData.map((p) => (
-    <ProfileDescription
-      name={p.name}
-      age={p.age}
-      country={p.country}
-      city={p.city}
-    />
-  ));
+  // let profileItems = props.store.profileData.map((p) => (
+  //   <ProfileDescription
+  //     name={p.name}
+  //     age={p.age}
+  //     country={p.country}
+  //     city={p.city}
+  //   />
+  // ));
 
   return (
     <div className={profile.container}>
-      Profile
+      {/* Profile
       <img className={profile.avatar} src={avatar} alt="avatar" />
-      <div className={profile.description}>{profileItems}</div>
+      <div className={profile.description}>{profileItems}</div> */}
+
+       <ProfileDescription profile={props.profile}/>    {/*найди завтра <- */}
       <MyPostsContainer />
 
     </div>
