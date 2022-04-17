@@ -23,7 +23,7 @@ const Profile = (props)  => {
       <img className={profile.avatar} src={avatar} alt="avatar" />
       <div className={profile.description}>{profileItems}</div> */}
 
-       <ProfileDescription profile={props.profile}/>    {/*найди завтра <- */}
+       <ProfileDescription profile={props.profile}/>   
       <MyPostsContainer />
 
     </div>
