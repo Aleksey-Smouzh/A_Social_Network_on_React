@@ -1,4 +1,4 @@
-import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 // import Profile from "./components/Navbar/Profile/Profile";
@@ -14,7 +14,7 @@ import UsersContainer from "./components/Navbar/Users/UsersContainer";
 function App(props) {
   return (
     <div className="container_app">
-      <Header></Header>
+      <HeaderContainer/>
         <Navbar />
         <Routes>
           <Route path="/profile" element={ProfileContainer} /> 
