@@ -3,12 +3,14 @@ import Profile from './Profile'
 import * as axios from "axios";
 import { connect } from 'react-redux';
 import {setUsersProfile} from '../../../redux/ProfileReducer'
+// import { useLocation } from 'react-router';
+
 
  class ProfileContainer extends Component {
 componentDidMount(){
     axios
     .get(
-      `https://social-network.samuraijs.com/api/1.0/profile?page/2`
+      `https://social-network.samuraijs.com/api/1.0/profile/2`
     )
     .then((response) => {
         debugger
@@ -29,5 +31,6 @@ componentDidMount(){
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile
 }) 
+// let WithUrlDataContainerComponent = useLocation(ProfileContainer) 
 
-export default connect (mapStateToProps, {setUsersProfile}) (ProfileContainer)
+export default connect (mapStateToProps, {setUsersProfile},  ) (ProfileContainer)
