@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import avatar from "../Image/avatar.jpeg";
 import userss from "./Users.module.css";
+import * as axios from "axios";
 
 let Users = (props) => {
   let pageCount = props.totalUsersCount / props.pageSize;
@@ -42,7 +43,21 @@ let Users = (props) => {
               {users.followed ? (
                 <button
                   onClick={() => {
-                    props.unfollow(users.id);
+                    axios
+                    .delete(
+                      `https://social-network.samuraijs.com/api/1.0/follow/${users.id}`, {},{withCredentials: true, headers: {"API-KEY": "aa000cc3-fda1-40f5-8750-749fdea93ea7"}},
+                      
+                    )
+                    .then((response) => {
+                      if (response.data.resultCode === 0 ){
+                        props.unfollow(users.id);
+                      }
+                     
+                    });
+
+                   
+
+
                   }}
                 >
                   Следи
@@ -50,7 +65,20 @@ let Users = (props) => {
               ) : (
                 <button
                   onClick={() => {
-                    props.follow(users.id);
+                    axios
+                    .post(
+                      `https://social-network.samuraijs.com/api/1.0/follow/${users.id}`, {},{withCredentials: true, headers: {"API-KEY": "aa000cc3-fda1-40f5-8750-749fdea93ea7"}}
+                    )
+                    .then((response) => {
+                      if (response.data.resultCode === 0 ){
+                        props.follow(users.id);
+                      }
+                     
+                    });
+
+                   
+
+
                   }}
                 >
                   Не следи

@@ -17,7 +17,7 @@ class UsersContainer extends React.Component {
     this.props.toggleIsFetchingCountActionCreator(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,{withCredentials: true, headers: {"API-KEY": "aa000cc3-fda1-40f5-8750-749fdea93ea7"}}
       )
       .then((response) => {
         this.props.toggleIsFetchingCountActionCreator(false);
@@ -32,7 +32,7 @@ class UsersContainer extends React.Component {
     this.props.toggleIsFetchingCountActionCreator(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`,{withCredentials: true, headers: {"API-KEY": "aa000cc3-fda1-40f5-8750-749fdea93ea7"}}
       )
       .then((response) => {
         this.props.setUsers(response.data.items);
