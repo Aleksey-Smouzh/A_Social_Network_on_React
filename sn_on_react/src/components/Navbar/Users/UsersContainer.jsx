@@ -11,32 +11,28 @@ import {
 } from "../../../redux/UsersReducer";
 import Users from "./Users";
 import Preloader from "../../Preloader/Preloader";
+import usersAPI from "../../../API/API";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.toggleIsFetchingCountActionCreator(true);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,{withCredentials: true, headers: {"API-KEY": "aa000cc3-fda1-40f5-8750-749fdea93ea7"}}
-      )
-      .then((response) => {
+    
+    usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
         this.props.toggleIsFetchingCountActionCreator(false);
-        this.props.setUsers(response.data.items);
-        this.props.setTotalUsersCount(response.data.totalCount);
+        this.props.setUsers(data.items);
+        this.props.setTotalUsersCount(data.totalCount);
       });
   }
-  //   getUsers = () => {};
+
 
   onPageChanged = (pageNumber) => {
     this.props.setCurrentPage(pageNumber);
     this.props.toggleIsFetchingCountActionCreator(true);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`,{withCredentials: true, headers: {"API-KEY": "aa000cc3-fda1-40f5-8750-749fdea93ea7"}}
-      )
-      .then((response) => {
-        this.props.setUsers(response.data.items);
+
+    usersAPI.getUsers(pageNumber,this.props.pageSize).then(data => {
+        this.props.setUsers(data.items);
         this.props.toggleIsFetchingCountActionCreator(false);
+        this.props.setUsers(data.items);
       });
   };
 
