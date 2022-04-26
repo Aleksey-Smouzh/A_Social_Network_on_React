@@ -13,15 +13,17 @@ import Users from "./Users";
 import Preloader from "../../Preloader/Preloader";
 import usersAPI from "../../../API/API";
 
+import getUsersThunkCreator from "../../../redux/UsersReducer"
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.toggleIsFetchingCountActionCreator(true);
+    this.props.getUsersThunkCreator();
+    // this.props.toggleIsFetchingCountActionCreator(true);
     
-    usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-        this.props.toggleIsFetchingCountActionCreator(false);
-        this.props.setUsers(data.items);
-        this.props.setTotalUsersCount(data.totalCount);
-      });
+    // usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
+    //     this.props.toggleIsFetchingCountActionCreator(false);
+    //     this.props.setUsers(data.items);
+    //     this.props.setTotalUsersCount(data.totalCount);
+    //   });
   }
 
 
@@ -86,4 +88,4 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps,  getUsersThunkCreator, mapDispatchToProps)(UsersContainer);

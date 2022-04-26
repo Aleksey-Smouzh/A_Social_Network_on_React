@@ -1,4 +1,4 @@
-import avatar from "../components/Navbar/Image/avatar.jpeg";
+
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLLOW";
 const SET_USERS = "SET_USERS";
@@ -11,7 +11,7 @@ let initialState = {
   pageSize: 100,
   totalUsersCount: 0,
   currentPage: 150,
-  isFetching: false
+  isFetching: false,
 };
 
 const UsersReducer = (state = initialState, action) => {
@@ -49,7 +49,7 @@ const UsersReducer = (state = initialState, action) => {
       return { ...state, totalUsersCount: action.count };
     }
     case TOGGLE_IS_FETCHING: {
-      return { ...state, isFetching: action.isFetching}
+      return { ...state, isFetching: action.isFetching };
     }
     default:
       return state;
@@ -80,16 +80,15 @@ export const toggleIsFetchingCountActionCreator = (isFetching) => ({
   isFetching,
 });
 
-export const getUsersThunk = (dispatch) => {
-  dispatch(toggleIsFetchingCountActionCreator(true));
-    
-  usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-     dispatch(toggleIsFetchingCountActionCreator(false));
+export const getUsersThunkCreator = (currentPage, pageSize) => {
+  return (dispatch) => {
+    dispatch(toggleIsFetchingCountActionCreator(true));
+    usersAPI.getUsers(currentPage, pageSize).then((data) => {
+      dispatch(toggleIsFetchingCountActionCreator(false));
       dispatch(setUsers(data.items));
       dispatch(setTotalUsersCount(data.totalCount));
     });
-}
-
-
+  };
+};
 
 export default UsersReducer;
