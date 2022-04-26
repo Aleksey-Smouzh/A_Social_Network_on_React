@@ -80,4 +80,16 @@ export const toggleIsFetchingCountActionCreator = (isFetching) => ({
   isFetching,
 });
 
+export const getUsersThunk = (dispatch) => {
+  dispatch(toggleIsFetchingCountActionCreator(true));
+    
+  usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
+     dispatch(toggleIsFetchingCountActionCreator(false));
+      dispatch(setUsers(data.items));
+      dispatch(setTotalUsersCount(data.totalCount));
+    });
+}
+
+
+
 export default UsersReducer;
