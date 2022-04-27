@@ -1,3 +1,5 @@
+import usersAPI from "../API/API";
+
 
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLLOW";
@@ -5,6 +7,7 @@ const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
+
 
 let initialState = {
   users: [],
@@ -82,11 +85,13 @@ export const toggleIsFetchingCountActionCreator = (isFetching) => ({
 
 export const getUsersThunkCreator = (currentPage, pageSize) => {
   return (dispatch) => {
+
     dispatch(toggleIsFetchingCountActionCreator(true));
+
     usersAPI.getUsers(currentPage, pageSize).then((data) => {
       dispatch(toggleIsFetchingCountActionCreator(false));
-      dispatch(setUsers(data.items));
-      dispatch(setTotalUsersCount(data.totalCount));
+      dispatch(setUsersTotalCountActionCreator(data.items));
+      dispatch(setUsersTotalCountActionCreator(data.totalCount));
     });
   };
 };

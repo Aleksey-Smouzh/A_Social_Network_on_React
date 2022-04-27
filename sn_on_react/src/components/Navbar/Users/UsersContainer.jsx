@@ -11,12 +11,12 @@ import {
 } from "../../../redux/UsersReducer";
 import Users from "./Users";
 import Preloader from "../../Preloader/Preloader";
-import usersAPI from "../../../API/API";
+
 
 import getUsersThunkCreator from "../../../redux/UsersReducer"
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.getUsersThunkCreator();
+    this.props.getUsers(this.props.currentPage, this.props.pageSize);
     // this.props.toggleIsFetchingCountActionCreator(true);
     
     // usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
@@ -28,14 +28,16 @@ class UsersContainer extends React.Component {
 
 
   onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber);
-    this.props.toggleIsFetchingCountActionCreator(true);
 
-    usersAPI.getUsers(pageNumber,this.props.pageSize).then(data => {
-        this.props.setUsers(data.items);
-        this.props.toggleIsFetchingCountActionCreator(false);
-        this.props.setUsers(data.items);
-      });
+    this.props.getUsers(pageNumber, this.props.pageSize);
+    // this.props.setCurrentPage(pageNumber);
+    // this.props.toggleIsFetchingCountActionCreator(true);
+
+    // usersAPI.getUsers(pageNumber,this.props.pageSize).then(data => {
+    //     this.props.setUsers(data.items);
+    //     this.props.toggleIsFetchingCountActionCreator(false);
+    //     this.props.setUsers(data.items);
+    //   });
   };
 
   render() {
@@ -88,4 +90,4 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps,  getUsersThunkCreator, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps,{ getUsers: getUsersThunkCreator}, mapDispatchToProps)(UsersContainer);
